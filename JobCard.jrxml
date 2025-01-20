@@ -1,0 +1,1059 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="JobCard" language="java" columnCount="1" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="7" whenResourceMissingType="Empty" uuid="cae4e8f9-d5e3-4835-8ede-7aac0b70da54">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="249"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="742"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CoreERP"/>
+	<import>java.math.*</import>
+	<style name="NZPresent" default="true" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{Present}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZLate" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{Late}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZEE" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{EE}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZEXL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{EXL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZNOP" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{NOP}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZCL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{CL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZSL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{SL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZAL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{AL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZMTL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{MTL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZDS" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{DS}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZSPL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{SPL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZSPL2" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{SPL2}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZAbsent" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{Absent}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZLWA" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{LWA}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZLWP" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{LWP}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZUL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{UL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZICL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{ICL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZCOL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{COL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZTL" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{TL}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZLTP" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{LTP}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZWO" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{WO}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZH" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{H}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="NZGD" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{GD}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="Default"/>
+	<style name="NZSD" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{SD}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="AbsentRed" fill="Solid" pattern="" bold="true">
+		<conditionalStyle mode="Opaque" forecolor="#FF0905" bold="true" italic="true">
+			<conditionExpression><![CDATA[$V{Absent}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="LateYellow" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" forecolor="#E8E790" bold="false" italic="true">
+			<conditionExpression><![CDATA[$V{Late}>0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="StatusColor" fill="Solid" pattern="">
+		<conditionalStyle mode="Opaque" forecolor="#FF0905" bold="true" italic="true">
+			<pen lineColor="#000000"/>
+			<box>
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+			<conditionExpression><![CDATA[$F{AttStatus}.equals("A")]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<parameter name="HTTP_DATA_URL" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[URL To get file from]]></description>
+		<defaultValueExpression><![CDATA["http://someurl.com"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HTTP_DATA_USERNAME" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[User name]]></description>
+		<defaultValueExpression><![CDATA["user"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HTTP_DATA_PASSWORD" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[Password]]></description>
+		<defaultValueExpression><![CDATA["pass"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HTTP_DATA_URL_PARAMETER_" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[URL Parameter prefix]]></description>
+		<defaultValueExpression><![CDATA["prm"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HTTP_DATA_POST_PARAMETER_" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[POST request parameter prefix]]></description>
+		<defaultValueExpression><![CDATA["prm"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HTTP_DATA_HEADER_PARAMETER_" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[Http Header parameter prefix]]></description>
+		<defaultValueExpression><![CDATA["value"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HRMModeId" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<parameter name="UserName" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Admin"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="prm" evaluationTime="Early" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{prm} != null && !$P{prm}.isEmpty() 
+    ? $P{prm} 
+    : "WHERE EmpID=dbo.REmpId('053324') AND WorkDay BETWEEN '2024-12-01' AND '2024-12-31'"
+]]></defaultValueExpression>
+	</parameter>
+	<query language="SQL"><![CDATA[SELECT *
+FROM VW_RPT_1_JobCard  $P!{prm} ]]></query>
+	<field name="CompanyName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CompanyName"/>
+		<property name="com.jaspersoft.studio.field.label" value="CompanyName"/>
+	</field>
+	<field name="CompanyId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CompanyId"/>
+		<property name="com.jaspersoft.studio.field.label" value="CompanyId"/>
+	</field>
+	<field name="UnitName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="UnitName"/>
+		<property name="com.jaspersoft.studio.field.label" value="UnitName"/>
+	</field>
+	<field name="UnitId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="UnitId"/>
+		<property name="com.jaspersoft.studio.field.label" value="UnitId"/>
+	</field>
+	<field name="EmpCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EmpCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="EmpCode"/>
+	</field>
+	<field name="EmpID" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="EmpID"/>
+		<property name="com.jaspersoft.studio.field.label" value="EmpID"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+	</field>
+	<field name="PunchNo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PunchNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="PunchNo"/>
+	</field>
+	<field name="PrevEmpID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PrevEmpID"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrevEmpID"/>
+	</field>
+	<field name="PrevPunchNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PrevPunchNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrevPunchNo"/>
+	</field>
+	<field name="DesignationName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DesignationName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DesignationName"/>
+	</field>
+	<field name="DesignationID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="DesignationID"/>
+		<property name="com.jaspersoft.studio.field.label" value="DesignationID"/>
+	</field>
+	<field name="DepartmentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DepartmentName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DepartmentName"/>
+	</field>
+	<field name="DepartmentID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="DepartmentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="DepartmentID"/>
+	</field>
+	<field name="SectionName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SectionName"/>
+		<property name="com.jaspersoft.studio.field.label" value="SectionName"/>
+	</field>
+	<field name="SectionID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="SectionID"/>
+		<property name="com.jaspersoft.studio.field.label" value="SectionID"/>
+	</field>
+	<field name="WingName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="WingName"/>
+		<property name="com.jaspersoft.studio.field.label" value="WingName"/>
+	</field>
+	<field name="WingID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="WingID"/>
+		<property name="com.jaspersoft.studio.field.label" value="WingID"/>
+	</field>
+	<field name="TeamName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TeamName"/>
+		<property name="com.jaspersoft.studio.field.label" value="TeamName"/>
+	</field>
+	<field name="TeamID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="TeamID"/>
+		<property name="com.jaspersoft.studio.field.label" value="TeamID"/>
+	</field>
+	<field name="JoiningDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="JoiningDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="JoiningDate"/>
+	</field>
+	<field name="WorkDay" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="WorkDay"/>
+		<property name="com.jaspersoft.studio.field.label" value="WorkDay"/>
+	</field>
+	<field name="ShiftShort" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ShiftShort"/>
+		<property name="com.jaspersoft.studio.field.label" value="ShiftShort"/>
+	</field>
+	<field name="InTime" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="InTime"/>
+		<property name="com.jaspersoft.studio.field.label" value="InTime"/>
+	</field>
+	<field name="OutTime" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="OutTime"/>
+		<property name="com.jaspersoft.studio.field.label" value="OutTime"/>
+	</field>
+	<field name="AttStatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AttStatus"/>
+		<property name="com.jaspersoft.studio.field.label" value="AttStatus"/>
+	</field>
+	<field name="WorkDuration" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="WorkDuration"/>
+		<property name="com.jaspersoft.studio.field.label" value="WorkDuration"/>
+	</field>
+	<field name="OtHours" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="OtHours"/>
+		<property name="com.jaspersoft.studio.field.label" value="OtHours"/>
+	</field>
+	<field name="OtHourInt" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="OtHourInt"/>
+		<property name="com.jaspersoft.studio.field.label" value="OtHourInt"/>
+	</field>
+	<field name="OtMinAfterHour" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="OtMinAfterHour"/>
+		<property name="com.jaspersoft.studio.field.label" value="OtMinAfterHour"/>
+	</field>
+	<field name="IsTiffin" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IsTiffin"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsTiffin"/>
+	</field>
+	<field name="IsIftar" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IsIftar"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsIftar"/>
+	</field>
+	<field name="IsNight" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IsNight"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsNight"/>
+	</field>
+	<field name="IsNightIncentive" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IsNightIncentive"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsNightIncentive"/>
+	</field>
+	<field name="IsHoliday" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IsHoliday"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsHoliday"/>
+	</field>
+	<field name="IsWeekOff" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IsWeekOff"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsWeekOff"/>
+	</field>
+	<field name="Remarks" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Remarks"/>
+		<property name="com.jaspersoft.studio.field.label" value="Remarks"/>
+	</field>
+	<field name="IsGeneralDuty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IsGeneralDuty"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsGeneralDuty"/>
+	</field>
+	<field name="LateInSecond" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="LateInSecond"/>
+		<property name="com.jaspersoft.studio.field.label" value="LateInSecond"/>
+	</field>
+	<field name="EmpTypeID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="EmpTypeID"/>
+		<property name="com.jaspersoft.studio.field.label" value="EmpTypeID"/>
+	</field>
+	<field name="EmpTypeName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EmpTypeName"/>
+		<property name="com.jaspersoft.studio.field.label" value="EmpTypeName"/>
+	</field>
+	<sortField name="EmpID"/>
+	<sortField name="EmpCode"/>
+	<sortField name="CompanyName"/>
+	<sortField name="UnitName"/>
+	<sortField name="DepartmentName"/>
+	<sortField name="SectionName"/>
+	<sortField name="WingName"/>
+	<sortField name="TeamName"/>
+	<sortField name="WorkDay"/>
+	<variable name="TotalWorkDuration" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{WorkDuration}]]></expression>
+	</variable>
+	<variable name="TotalOTHour" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Float">
+		<expression><![CDATA[$F{OtHourInt} != null ? $F{OtHourInt} : 00.00f]]></expression>
+	</variable>
+	<variable name="TotalOTMin" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Float">
+		<expression><![CDATA[$F{OtMinAfterHour} != null ? $F{OtMinAfterHour} : 0.00f]]></expression>
+	</variable>
+	<variable name="TotalTiffin" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{IsTiffin}]]></expression>
+	</variable>
+	<variable name="TotalIftar" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{IsIftar}]]></expression>
+	</variable>
+	<variable name="TotalNight" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{IsNight}]]></expression>
+	</variable>
+	<variable name="TotalIncentive" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{IsNightIncentive}]]></expression>
+	</variable>
+	<variable name="TotalHolidayDay" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{IsHoliday}]]></expression>
+	</variable>
+	<variable name="TotalWODay" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{IsWeekOff}]]></expression>
+	</variable>
+	<variable name="Present" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{AttStatus} != null && 
+($F{AttStatus}.equals("P") || $F{AttStatus}.equals("LT") || $F{AttStatus}.equals("EXL")  || $F{AttStatus}.equals("NOP")  || $F{AttStatus}.equals("SD")  || $F{AttStatus}.equals("EE")) ? 1 : 0
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Late" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("LT") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="SD" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("SD")  ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="EE" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("EE")  ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="EXL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("EXL")  ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="NOP" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("NOP")  ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Absent" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("A")  ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="CL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("CL")   ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="MTL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+($F{AttStatus}.equals("MTL") )  ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="SL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+ $F{AttStatus}.equals("SL")  ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="AL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("AL") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="DS" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("DS") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="LWP" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("LWP") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="UL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("UL") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="SPL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("SPL") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="SPL2" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("SPL2") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="ICL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("ICL") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="COL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("COL") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="LWA" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("LWA") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="LTP" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("LTP") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="TL" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("TL") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="WO" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("WO") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="H" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[
+$F{AttStatus} != null && 
+$F{AttStatus}.equals("H") ? 1 : 0
+
+]]></expression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="GD" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{IsGeneralDuty}]]></expression>
+	</variable>
+	<variable name="LateTime" resetType="Group" calculation="Sum" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{LateInSecond}]]></expression>
+	</variable>
+	<variable name="LateTime_Min_Sec" resetType="Group" resetGroup="EmpCode" class="java.lang.String">
+		<expression><![CDATA[String.valueOf((($V{LateTime})/60)) +" Min " + String.valueOf(($V{LateTime})%60) + " Sec"]]></expression>
+	</variable>
+	<variable name="WorkDayCount" resetType="Group" calculation="Count" resetGroup="EmpCode" class="java.lang.Integer">
+		<expression><![CDATA[$F{AttStatus}]]></expression>
+	</variable>
+	<group name="EmpCode" keepTogether="true" preventOrphanFooter="true" startNewPage="true">
+		<expression><![CDATA[$F{EmpCode}]]></expression>
+		<groupFooter>
+			<band height="108">
+				<element kind="rectangle" uuid="04360c1d-93d6-4ddc-8416-81d934b0ccfb" mode="Transparent" x="4" y="0" width="547" height="15" backcolor="#FFFFFF" style="Default">
+					<pen lineWidth="0.25"/>
+				</element>
+				<element kind="staticText" uuid="3bfed49c-b252-45c0-9c06-4452605dc5b3" x="256" y="0" width="33" height="15" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+					<text><![CDATA[Total]]></text>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f3d717e-c54d-4a30-a77e-520276418a83"/>
+					<box style="Default">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="f1f810b6-8fae-4950-9aa8-72fcf9c047ca" x="325" y="0" width="34" height="15" fontSize="8.0" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+					<expression><![CDATA[$V{TotalTiffin}.toString() + "/" + $V{TotalIftar}.toString()
+]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+					<box style="Default">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="00779513-bfce-4dce-96f5-be3e595f4305" x="359" y="0" width="34" height="15" fontSize="8.0" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+					<expression><![CDATA[$V{TotalNight}.toString() + "/" + $V{TotalIncentive}.toString()
+]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+					<box style="Default">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="1c23f86e-cf32-483e-bf0d-085167fcce81" x="393" y="0" width="34" height="15" fontSize="8.0" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+					<expression><![CDATA[$V{TotalHolidayDay}.toString() + "/" + $V{TotalWODay}.toString()
+]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+					<box style="Default">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="rectangle" uuid="c1612800-8b97-448f-a8ca-1e02b9aa4d3e" x="4" y="18" width="547" height="59" style="Default">
+					<pen lineWidth="0.25"/>
+				</element>
+				<element kind="rectangle" uuid="d0cbe6ab-dc0a-4102-8208-6c79629eba50" x="4" y="18" width="547" height="15" style="Default">
+					<pen lineWidth="0.25"/>
+				</element>
+				<element kind="rectangle" uuid="0ef82fca-b381-40c6-bd9b-32c3074e11c2" x="4" y="33" width="547" height="15" style="Default">
+					<pen lineWidth="0.25"/>
+				</element>
+				<element kind="rectangle" uuid="cbf07397-733a-410b-bac7-e5e13ee6cccc" x="4" y="48" width="547" height="15" style="Default">
+					<pen lineWidth="0.25"/>
+				</element>
+				<element kind="rectangle" uuid="b6245feb-0f0d-427f-83a2-51ccada0f935" x="4" y="63" width="547" height="15" style="Default">
+					<pen lineWidth="0.25"/>
+				</element>
+				<element kind="textField" uuid="672dea1c-b6ca-4868-86bf-fef6e2b46f60" x="4" y="18" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZPresent">
+					<expression><![CDATA["P = " + $V{Present}.toString()]]></expression>
+					<box style="NZPresent">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="414268d9-32bb-4a49-b002-338aa1b88d26" x="95" y="18" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZLate">
+					<expression><![CDATA["LT = " + $V{Late}.toString()]]></expression>
+					<box style="NZLate">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="8f2dbf0e-e565-4685-ae06-8a554feea6ef" x="186" y="18" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZSD">
+					<expression><![CDATA["SD = " + $V{SD}.toString()]]></expression>
+					<box style="NZSD">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="e82a614f-0845-44db-a2c6-e8794694c470" x="277" y="18" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZEE">
+					<expression><![CDATA["EE = " + $V{EE}.toString()]]></expression>
+					<box style="NZEE">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="39226bbb-9a79-41d4-9d97-e83d637bb8f1" x="459" y="18" width="92" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZNOP">
+					<expression><![CDATA["NOP = " + $V{NOP}.toString()]]></expression>
+					<property name="com.jaspersoft.studio.unit.width" value="inch"/>
+					<box style="NZNOP">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="41537956-8b9d-43dd-94b9-4b9ae5af9050" x="4" y="33" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZAbsent">
+					<expression><![CDATA["A = " + $V{Absent}.toString()]]></expression>
+					<box style="NZAbsent">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="d931084a-a16d-4487-999b-12b8005881e6" x="368" y="33" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZMTL">
+					<expression><![CDATA["MTL  = " + $V{MTL}.toString()]]></expression>
+					<box style="NZMTL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="715b00df-82eb-4b8f-b2a0-d54f496f1aef" mode="Transparent" x="95" y="33" width="91" height="15" backcolor="#FFFFFF" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZCL">
+					<expression><![CDATA["CL = " + $V{CL}.toString()]]></expression>
+					<box style="NZCL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="b0a00670-58b7-4b16-990b-03402f16d58c" x="186" y="33" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZSL">
+					<expression><![CDATA["SL = " + $V{SL}.toString()]]></expression>
+					<box style="NZSL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="40670dc2-34da-499f-9d40-3e1b00a221af" x="277" y="33" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZAL">
+					<expression><![CDATA["AL = " + $V{AL}.toString()]]></expression>
+					<box style="NZAL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="819b625a-6917-4804-b1fe-433860a5e061" x="459" y="33" width="92" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZDS">
+					<expression><![CDATA["DS = " + $V{DS}.toString()]]></expression>
+					<box style="NZDS">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="596a7264-34f8-4311-8590-8ffb2822a58a" x="4" y="48" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZSPL">
+					<expression><![CDATA["SPL = " + $V{SPL}.toString()]]></expression>
+					<box style="NZSPL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="6ae367d8-ae16-41a9-a881-63def8e244d0" x="95" y="48" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZSPL2">
+					<expression><![CDATA["SPL2 = " + $V{SPL2}.toString()]]></expression>
+					<box style="NZSPL2">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="5b592857-9e7f-4df9-aeaa-e37d4410e913" x="186" y="48" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZLWP">
+					<expression><![CDATA["LWP = " + $V{LWP}.toString()]]></expression>
+					<box style="NZLWP">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="46bbc7f1-7855-49d0-a4f2-e581d434eba5" x="277" y="48" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZUL">
+					<expression><![CDATA["UL = " + $V{UL}.toString()]]></expression>
+					<box style="NZUL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="704a1912-e3c4-4972-9eb7-7d082eb7a1a8" x="368" y="48" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZICL">
+					<expression><![CDATA["ICL = " + $V{ICL}.toString()]]></expression>
+					<box style="NZICL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="54304e28-493d-40a1-8d6d-8ab9010c00d3" x="459" y="48" width="92" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZCOL">
+					<expression><![CDATA["COL = " + $V{COL}.toString()]]></expression>
+					<box style="NZCOL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="e382465b-cd8d-4e0e-9ba8-99fd91f5d02d" x="4" y="63" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZLWA">
+					<expression><![CDATA["LWA = " + $V{LWA}.toString()]]></expression>
+					<box style="NZLWA">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="7ab5ca1a-4170-469d-8856-fb3768dab379" x="186" y="63" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZLTP">
+					<expression><![CDATA["LTP = " + $V{LTP}.toString()]]></expression>
+					<box style="NZLTP">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="6a8e0053-f5dd-4824-b921-ee38d1478368" x="95" y="63" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZTL">
+					<expression><![CDATA["TL = " + $V{TL}.toString()]]></expression>
+					<box style="NZTL">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="8fd319d3-c453-4668-ab14-8db699eff57d" x="277" y="63" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZWO">
+					<expression><![CDATA["WO = " + $V{WO}.toString()]]></expression>
+					<box style="NZWO">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="c32d716a-1a3e-49cb-b01c-cf7488a1a467" x="368" y="63" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZH">
+					<expression><![CDATA["H = " + $V{H}.toString()]]></expression>
+					<box style="NZH">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="bab2540e-6879-4d28-86dd-537d6d5895b2" x="459" y="63" width="92" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZGD">
+					<expression><![CDATA["GD = " + $V{GD}.toString()]]></expression>
+					<box style="NZGD">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="2d214621-bfbd-4ef5-b2e5-953f4680fe10" x="4" y="78" width="547" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" removeLineWhenBlank="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+					<expression><![CDATA["Total Late Time = " + $V{LateTime_Min_Sec}]]></expression>
+					<box style="Default">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="24403bec-8152-4fa4-95f3-257bfaa7110c" x="4" y="93" width="547" height="15" fontSize="8.0" textAdjust="ScaleFont" removeLineWhenBlank="true" bold="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+					<expression><![CDATA[">General Note: Day Shift Lunch Break- 01:00 PM to 02:00 PM = 1 Hours ;  Night Shift Break- 01:00 AM to 02:00 AM = 1 Hours<"]]></expression>
+					<box style="Default">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="a2077286-3cd8-4aef-8557-b68f734f64f7" x="4" y="0" width="67" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$V{WorkDayCount}.toString() + " Days"]]></expression>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="bcdc9809-a33b-4b34-8b0c-d1468a2e49e0" x="289" y="0" width="36" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$V{TotalOTHour} + (float)Math.floor($V{TotalOTMin}/ 60) +(float)Math.floor($V{TotalOTMin}%60)/100]]></expression>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="f4d0900f-06f8-4dcb-987d-c1bf9ee8ae0f" x="71" y="0" width="185" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA["Total Work Time: " + ($V{TotalWorkDuration}/60) + " Hour " + ($V{TotalWorkDuration}%60) + " Minute"]]></expression>
+					<box>
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+				</element>
+				<element kind="textField" uuid="7dc8dac0-618c-429c-bf4e-35a232e8d45d" x="368" y="18" width="91" height="15" fontSize="8.0" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="NZEE">
+					<expression><![CDATA["EXL = " + $V{EXL}.toString()]]></expression>
+					<box style="NZEE">
+						<pen lineWidth="0.25"/>
+					</box>
+				</element>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="CompanyName" keepTogether="true" startNewPage="true">
+		<expression><![CDATA[$F{CompanyName}]]></expression>
+	</group>
+	<group name="UnitName" keepTogether="true" startNewPage="true">
+		<expression><![CDATA[$F{UnitName}]]></expression>
+	</group>
+	<group name="DepartmentName" keepTogether="true" startNewPage="true">
+		<expression><![CDATA[$F{DepartmentName}]]></expression>
+	</group>
+	<group name="SectionName" keepTogether="true" startNewPage="true">
+		<expression><![CDATA[$F{SectionName}]]></expression>
+	</group>
+	<group name="WingName" keepTogether="true" startNewPage="true">
+		<expression><![CDATA[$F{WingName}]]></expression>
+	</group>
+	<group name="TeamName" keepTogether="true" startNewPage="true">
+		<expression><![CDATA[$F{TeamName}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title splitType="Stretch"/>
+	<pageHeader height="103" splitType="Stretch">
+		<element kind="textField" uuid="3f3146a9-c7fb-42cf-a5f2-dd7ed1daaf82" x="4" y="42" width="126" height="18" fontSize="11.0" textAdjust="ScaleFont" blankWhenNull="true" bold="true" italic="false" hTextAlign="Left" vTextAlign="Middle" style="Default">
+			<expression><![CDATA["Emp ID: " + $F{EmpCode}.toString()]]></expression>
+		</element>
+		<element kind="textField" uuid="c7d9be6c-bdc3-491c-ba2b-f2902e8219a8" x="425" y="42" width="126" height="18" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Default">
+			<expression><![CDATA["Join Date: " + new java.text.SimpleDateFormat("dd-MMM-yyyy").format($F{JoiningDate})
+]]></expression>
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+		</element>
+		<element kind="textField" uuid="e509bd80-e318-4759-bf3c-05923b142264" stretchType="NoStretch" x="4" y="62" width="165" height="18" fontSize="10.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" italic="false" hTextAlign="Left" vTextAlign="Middle" style="Default">
+			<expression><![CDATA["Name: " + $F{Name}.toString()]]></expression>
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+		</element>
+		<element kind="staticText" uuid="3aeb38e0-f84c-4524-975e-b792006c7274" x="411" y="2" width="142" height="34" fontSize="13.0" bold="true" italic="true" hTextAlign="Right" vTextAlign="Middle" style="Default">
+			<text><![CDATA[Monthly Job Card]]></text>
+		</element>
+		<element kind="textField" uuid="3a2df375-fba3-483f-a500-00b483887b37" x="0" y="2" width="238" height="34" fontSize="13.0" blankWhenNull="true" bold="true" hTextAlign="Left" vTextAlign="Middle" style="Default">
+			<expression><![CDATA[$F{CompanyName}]]></expression>
+		</element>
+		<element kind="line" uuid="7ff821a3-1044-40fa-9fcf-6b50a49c841f" x="0" y="36" width="553" height="1"/>
+		<element kind="line" uuid="379627c1-5423-4228-ab14-6ef242e5576c" x="0" y="39" width="553" height="1"/>
+		<element kind="textField" uuid="aa310e95-7013-4b93-b5be-7a670880b179" stretchType="ContainerHeight" x="168" y="62" width="218" height="18" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<expression><![CDATA[$F{DepartmentName}]]></expression>
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+		</element>
+		<element kind="textField" uuid="44d14cfc-7108-47fb-a252-2c6d652d5f18" x="130" y="42" width="295" height="18" fontSize="12.0" textAdjust="ScaleFont" linkType="None" linkTarget="Self" blankWhenNull="true" bold="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<expression><![CDATA[$F{UnitName}]]></expression>
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+		</element>
+		<element kind="textField" uuid="e5b34c77-25ef-4886-8079-4f9c65b883fa" positionType="Float" stretchType="NoStretch" x="169" y="82" width="218" height="18" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" removeLineWhenBlank="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<expression><![CDATA[$F{WingName}]]></expression>
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+		</element>
+		<element kind="textField" uuid="7cc5bd63-16f8-4c8b-9490-ae2c43f1217f" stretchType="ContainerHeight" x="386" y="62" width="165" height="18" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Right" vTextAlign="Middle" style="Default">
+			<expression><![CDATA[$F{SectionName}]]></expression>
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+		</element>
+		<element kind="textField" uuid="fc1d41ff-d596-42a5-a28d-990245cf743a" positionType="Float" x="386" y="82" width="165" height="18" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" removeLineWhenBlank="true" hTextAlign="Right" vTextAlign="Middle" style="Default">
+			<expression><![CDATA[$F{TeamName}]]></expression>
+			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+		</element>
+	</pageHeader>
+	<columnHeader height="80" splitType="Stretch">
+		<element kind="staticText" uuid="32951c38-bad8-4113-9352-7f7cb0678259" x="4" y="0" width="67" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a6723eb5-a68c-499f-86a2-2036912501b3"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="08e105b4-de99-4f77-99de-2d9ae921f44c" x="130" y="0" width="63" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[InTime]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8423366-825f-479f-9a38-5389c116273a"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="8721a495-0335-422a-be6a-be72a1976967" x="193" y="0" width="63" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[OutTime]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c188fa54-acc3-4ee5-8ff0-4ff6c31f6cf7"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="389b75d4-7997-439c-aed7-959d3262e824" x="256" y="0" width="33" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[Status]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f3d717e-c54d-4a30-a77e-520276418a83"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="764d277b-14b8-4334-b1f0-bd24b1b190b0" x="71" y="0" width="59" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[Shift]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ddca81f-32f5-401a-8030-1b4ddcc67f1e"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="1b34998d-efb9-418a-beb6-01b08fff4db8" x="325" y="0" width="34" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[Tfn/Iftr]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="180f61bf-ad02-4641-b296-f4eba1595d88" x="359" y="0" width="34" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[Nt/Inc]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="3a751161-1917-4d03-9a32-10b22ceecbec" x="393" y="0" width="34" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[H/WO]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="2321ec92-212b-4411-acee-3f0c1ab25acf" x="427" y="0" width="124" height="14" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<text><![CDATA[Remarks]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+			<box style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="e917847b-5b7e-4b1a-93ac-74c31018cded" x="289" y="0" width="36" height="14" textAdjust="ScaleFont" hTextAlign="Center" vTextAlign="Middle" style="Default">
+			<expression><![CDATA[$F{EmpTypeID} == 5 || $F{EmpTypeID} == 6 ? "Working\nHour" : "OTHour"]]></expression>
+			<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0" style="Default">
+				<pen lineWidth="0.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<element kind="textField" uuid="d4773bd7-0b23-4a47-b4ff-197c415b1dc1" x="4" y="0" width="67" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[new java.text.SimpleDateFormat("dd-MMM-yyyy").format($F{WorkDay})
+]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a6723eb5-a68c-499f-86a2-2036912501b3"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="d1c1f45a-3f44-4417-84fd-8612a2f4a646" x="130" y="0" width="63" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{InTime} != null ? new java.text.SimpleDateFormat("hh:mm:ss a").format($F{InTime}) : ""
+]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8423366-825f-479f-9a38-5389c116273a"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="509a8633-eaad-40db-91ff-3a25f3f24b37" x="256" y="0" width="33" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="StatusColor">
+				<expression><![CDATA[$F{AttStatus}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f3d717e-c54d-4a30-a77e-520276418a83"/>
+				<box style="StatusColor">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="64659b51-1011-468a-a44c-c916fe76feea" x="193" y="0" width="63" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{OutTime} != null ? new java.text.SimpleDateFormat("hh:mm:ss a").format($F{OutTime}) : ""
+]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8423366-825f-479f-9a38-5389c116273a"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="42bb90ce-145c-4eca-9502-435f8c3d636f" x="71" y="0" width="59" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{ShiftShort}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ddca81f-32f5-401a-8030-1b4ddcc67f1e"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="a470ac59-6742-4717-a202-4208e8c5acc9" x="289" y="0" width="36" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{OtHours}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="48d66438-9679-4235-8d18-4d85b6b3a8ee" x="325" y="0" width="34" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{IsTiffin}.toString() + "/" + $F{IsIftar}.toString()
+]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="8adb8c51-664b-407a-96fe-5c0e9c4437e2" x="359" y="0" width="34" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{IsNight}.toString() + "/" + $F{IsNightIncentive}.toString()
+]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="c0e20baf-629b-4d46-951b-a68d333e4131" x="393" y="0" width="34" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{IsHoliday}.toString() + "/" + $F{IsWeekOff}.toString()
+]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="e4e0cdf4-3e28-485f-b657-c3a50066c739" x="427" y="0" width="124" height="15" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" hTextAlign="Center" vTextAlign="Middle" style="Default">
+				<expression><![CDATA[$F{Remarks}
+]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1a09a464-aaf1-4274-8307-07ec8f9f7ecb"/>
+				<box style="Default">
+					<pen lineWidth="0.25"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter splitType="Stretch"/>
+	<pageFooter height="40" splitType="Stretch">
+		<element kind="textField" uuid="07713732-01e6-46d6-bdf3-8b5a1e9a6a37" x="34" y="14" width="450" height="10" fontSize="5.0" textAdjust="ScaleFont" pattern="MMMMM dd, yyyy" bold="false" vTextAlign="Middle">
+			<expression><![CDATA["Printed On: " +  new java.text.SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a").format(new java.util.Date()) + ", By " + $P{UserName}.toString() + " " + new String(new char[$P{HRMModeId}]).replace("\0", "|") + " Designed & Developed By IT Department."]]></expression>
+		</element>
+		<element kind="textField" uuid="0e278ffd-1153-48af-9913-973b6fb73848" x="484" y="14" width="38" height="10" fontSize="5.0" textAdjust="ScaleFont" bold="false" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA["Page " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="8518d522-d29f-4f95-a620-94847ebc11da" x="525" y="14" width="26" height="10" fontSize="5.0" textAdjust="ScaleFont" evaluationTime="Report" bold="false" hTextAlign="Left" vTextAlign="Middle">
+			<expression><![CDATA[" of " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="image" uuid="07659621-e3fe-4d73-ac79-8b7daae4eb5e" x="4" y="0" width="24" height="24">
+			<expression><![CDATA["Ha-Meem Round Logo.jpg"]]></expression>
+		</element>
+		<element kind="textField" uuid="2065c561-fd1a-4553-8a00-6a72959b0b27" x="34" y="0" width="517" height="14" fontSize="4.0" textAdjust="StretchHeight" pattern="MMMMM dd, yyyy" bold="false" italic="false" hTextAlign="Justified" vTextAlign="Bottom">
+			<expression><![CDATA["P = Present, LT = Late SD = Site Duty, EE = Early Exit, EXL = Excessive Late,NOP = No Out Punch, A = Absent, MTL = Maternity Leave, CL = Casual Leave, SL = Sick Leave, AL = Annual Leave, DS = Disciplinary Suspension, SPL = Special Leave, SPL2 = Special Leave 2, \nLWP = Leave Without Pay, UL = Unpaid Leave, ICL = Injury Compensatory Leave, COL = Compensatory Leave, LWA = Leave Without Allowance, LTP = Late Permission, TL = Tour Leave, WO = Week Off, H = Holiday, GD = General Duty"]]></expression>
+		</element>
+	</pageFooter>
+	<summary splitType="Stretch"/>
+</jasperReport>
