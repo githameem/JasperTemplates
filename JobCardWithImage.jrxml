@@ -6,13 +6,6 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CoreERP"/>
 	<import>java.math.*</import>
 	<style name="NZPresent" default="true" fill="Solid" pattern="">
-		<box>
-			<pen lineWidth="1.0"/>
-			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-		</box>
 		<conditionalStyle mode="Opaque" bold="true" italic="true">
 			<conditionExpression><![CDATA[$V{Present}>0]]></conditionExpression>
 		</conditionalStyle>
@@ -188,10 +181,11 @@
 	<parameter name="prm" evaluationTime="Early" class="java.lang.String">
 		<defaultValueExpression><![CDATA[$P{prm} != null && !$P{prm}.isEmpty() 
     ? $P{prm} 
-    : "1,1,'1',NULL,NULL,NULL,NULL,'872,200963','2024-01-01','2025-01-31'"
+    : "WHERE EmpID=dbo.REmpId('053324') AND WorkDay BETWEEN '2024-12-01' AND '2024-12-31'"
 ]]></defaultValueExpression>
 	</parameter>
-	<query language="SQL"><![CDATA[SELECT * FROM dbo.FN_ViewJobCard($P!{prm})]]></query>
+	<query language="SQL"><![CDATA[SELECT *
+FROM VW_RPT_1_JobCard  $P!{prm} ]]></query>
 	<field name="CompanyName" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="CompanyName"/>
 		<property name="com.jaspersoft.studio.field.label" value="CompanyName"/>
@@ -212,7 +206,7 @@
 		<property name="com.jaspersoft.studio.field.name" value="EmpCode"/>
 		<property name="com.jaspersoft.studio.field.label" value="EmpCode"/>
 	</field>
-	<field name="EmpID" class="java.lang.Integer">
+	<field name="EmpID" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.name" value="EmpID"/>
 		<property name="com.jaspersoft.studio.field.label" value="EmpID"/>
 	</field>
@@ -308,7 +302,7 @@
 		<property name="com.jaspersoft.studio.field.name" value="OtHourInt"/>
 		<property name="com.jaspersoft.studio.field.label" value="OtHourInt"/>
 	</field>
-	<field name="OtMinAfterHour" class="java.lang.Integer">
+	<field name="OtMinAfterHour" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.name" value="OtMinAfterHour"/>
 		<property name="com.jaspersoft.studio.field.label" value="OtMinAfterHour"/>
 	</field>
@@ -850,7 +844,7 @@ $F{AttStatus}.equals("H") ? 1 : 0
 	<background splitType="Stretch"/>
 	<title splitType="Stretch"/>
 	<pageHeader height="103" splitType="Stretch">
-		<element kind="textField" uuid="3f3146a9-c7fb-42cf-a5f2-dd7ed1daaf82" x="4" y="42" width="126" height="18" fontSize="11.0" textAdjust="ScaleFont" blankWhenNull="true" italic="false" bold="true" hTextAlign="Left" vTextAlign="Middle" style="Default">
+		<element kind="textField" uuid="3f3146a9-c7fb-42cf-a5f2-dd7ed1daaf82" x="4" y="42" width="126" height="18" fontSize="11.0" textAdjust="ScaleFont" blankWhenNull="true" bold="true" italic="false" hTextAlign="Left" vTextAlign="Middle" style="Default">
 			<expression><![CDATA["Emp ID: " + $F{EmpCode}.toString()]]></expression>
 		</element>
 		<element kind="textField" uuid="c7d9be6c-bdc3-491c-ba2b-f2902e8219a8" x="425" y="42" width="126" height="18" fontSize="8.0" textAdjust="ScaleFont" blankWhenNull="true" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Default">
@@ -858,11 +852,11 @@ $F{AttStatus}.equals("H") ? 1 : 0
 ]]></expression>
 			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
 		</element>
-		<element kind="textField" uuid="e509bd80-e318-4759-bf3c-05923b142264" stretchType="NoStretch" x="4" y="62" width="165" height="18" fontSize="10.0" textAdjust="StretchHeight" blankWhenNull="true" italic="false" bold="false" hTextAlign="Left" vTextAlign="Middle" style="Default">
+		<element kind="textField" uuid="e509bd80-e318-4759-bf3c-05923b142264" stretchType="NoStretch" x="4" y="62" width="165" height="18" fontSize="10.0" textAdjust="StretchHeight" blankWhenNull="true" bold="false" italic="false" hTextAlign="Left" vTextAlign="Middle" style="Default">
 			<expression><![CDATA["Name: " + $F{Name}.toString()]]></expression>
 			<property name="com.jaspersoft.studio.unit.height" value="inch"/>
 		</element>
-		<element kind="staticText" uuid="3aeb38e0-f84c-4524-975e-b792006c7274" x="411" y="2" width="142" height="34" fontSize="13.0" italic="true" bold="true" hTextAlign="Right" vTextAlign="Middle" style="Default">
+		<element kind="staticText" uuid="3aeb38e0-f84c-4524-975e-b792006c7274" x="411" y="2" width="142" height="34" fontSize="13.0" bold="true" italic="true" hTextAlign="Right" vTextAlign="Middle" style="Default">
 			<text><![CDATA[Monthly Job Card]]></text>
 		</element>
 		<element kind="textField" uuid="3a2df375-fba3-483f-a500-00b483887b37" x="0" y="2" width="238" height="34" fontSize="13.0" blankWhenNull="true" bold="true" hTextAlign="Left" vTextAlign="Middle" style="Default">
@@ -1043,10 +1037,8 @@ $F{AttStatus}.equals("H") ? 1 : 0
 			</element>
 		</band>
 	</detail>
-	<columnFooter height="2" splitType="Stretch">
-		<property name="com.jaspersoft.studio.unit.height" value="px"/>
-	</columnFooter>
-	<pageFooter height="24" splitType="Stretch">
+	<columnFooter splitType="Stretch"/>
+	<pageFooter height="26" splitType="Stretch">
 		<element kind="textField" uuid="07713732-01e6-46d6-bdf3-8b5a1e9a6a37" x="34" y="14" width="450" height="10" fontSize="5.0" textAdjust="ScaleFont" pattern="MMMMM dd, yyyy" bold="false" vTextAlign="Middle">
 			<expression><![CDATA["Printed On: " +  new java.text.SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a").format(new java.util.Date()) + ", By " + $P{UserName}.toString() + " " + new String(new char[$P{HRMModeId}]).replace("\0", "|") + " Designed & Developed By IT Department."]]></expression>
 		</element>
@@ -1056,10 +1048,12 @@ $F{AttStatus}.equals("H") ? 1 : 0
 		<element kind="textField" uuid="8518d522-d29f-4f95-a620-94847ebc11da" x="525" y="14" width="26" height="10" fontSize="5.0" textAdjust="ScaleFont" evaluationTime="Report" bold="false" hTextAlign="Left" vTextAlign="Middle">
 			<expression><![CDATA[" of " + $V{PAGE_NUMBER}]]></expression>
 		</element>
-		<element kind="image" uuid="07659621-e3fe-4d73-ac79-8b7daae4eb5e" x="4" y="0" width="24" height="24">
-			<expression><![CDATA["https://portal.hameemgroup.com/assets/company_logo_round-CKPNSk9f.png"]]></expression>
+		<element kind="frame" uuid="920c4fd3-d572-48c6-b962-4a2cae65dde0" x="4" y="0" width="24" height="24">
+			<element kind="image" uuid="07659621-e3fe-4d73-ac79-8b7daae4eb5e" x="0" y="0" width="24" height="24">
+				<expression><![CDATA["Ha-Meem Round Logo.jpg"]]></expression>
+			</element>
 		</element>
-		<element kind="textField" uuid="2065c561-fd1a-4553-8a00-6a72959b0b27" x="34" y="0" width="517" height="14" fontSize="4.0" textAdjust="StretchHeight" pattern="MMMMM dd, yyyy" italic="false" bold="false" hTextAlign="Justified" vTextAlign="Bottom">
+		<element kind="textField" uuid="2065c561-fd1a-4553-8a00-6a72959b0b27" x="34" y="0" width="517" height="14" fontSize="4.0" textAdjust="StretchHeight" pattern="MMMMM dd, yyyy" bold="false" italic="false" hTextAlign="Justified" vTextAlign="Bottom">
 			<expression><![CDATA["P = Present, LT = Late SD = Site Duty, EE = Early Exit, EXL = Excessive Late,NOP = No Out Punch, A = Absent, MTL = Maternity Leave, CL = Casual Leave, SL = Sick Leave, AL = Annual Leave, DS = Disciplinary Suspension, SPL = Special Leave, SPL2 = Special Leave 2, \nLWP = Leave Without Pay, UL = Unpaid Leave, ICL = Injury Compensatory Leave, COL = Compensatory Leave, LWA = Leave Without Allowance, LTP = Late Permission, TL = Tour Leave, WO = Week Off, H = Holiday, GD = General Duty"]]></expression>
 		</element>
 	</pageFooter>
